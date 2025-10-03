@@ -1,0 +1,86 @@
+🚨 Exercício de Fixação – POO com Herança e CRUD 🚨
+
+Pessoal, agora que já vimos herança, 
+quero que vocês desenvolvam um sistema de funcionários de uma empresa em Ruby.
+O objetivo é praticar:
+
+•⁠  ⁠Herança entre classes
+
+•⁠  ⁠Métodos específicos de cada classe
+
+•⁠  ⁠Separação de arquivos ( ⁠ require_relative ⁠ )
+
+•⁠  ⁠Implementação de um CRUD básico
+(Cadastrar, Listar, Buscar, Atualizar e Remover)
+
+📌 Regras do exercício:
+
+1 - Criar uma classe Funcionario (classe base)
+•⁠  ⁠Atributos : ⁠ id ⁠ , ⁠ nome ⁠ , ⁠ salario_base ⁠
+
+•⁠  ⁠Método ⁠ calcular_salario
+(genérico, será sobrescrito nas subclasses)
+
+2 - Criar 3 subclasses:
+•⁠  ⁠Gerente→recebe bônus fixo sobre o salário base
+
+•⁠  ⁠Vendedor→recebe comissão (valor informado no cadastro)
+    além do salário base
+
+•⁠  ⁠Estagiario→recebe apenas metade do salário base,
+    sem benefícios
+
+3 - Criar um CRUD com menu de opções no main.rb:
+•⁠  ⁠1 → Cadastrar funcionário
+•⁠  ⁠2 → Listar todos os funcionários
+•⁠  ⁠3 → Buscar funcionário por nome
+•⁠  ⁠4 → Atualizar informações
+•⁠  ⁠5 → Remover funcionário
+•⁠  ⁠6 → Calcular salários
+    (mostrar o salário final de cada funcionário
+    de acordo com a regra da classe)
+•⁠  ⁠7 → Sair
+
+4 - As classes devem estar em arquivos separados
+(ex: ⁠ funcionario.rb ⁠ , ⁠ gerente.rb ⁠ , etc.)
+e no ⁠ main.rb ⁠ usar ⁠ require_relative.
+
+✅ Exemplo de uso esperado (simplificado):
+
+
+=== Sistema de Funcionários ===
+1. Cadastrar
+2. Listar
+3. Buscar
+4. Atualizar
+5. Remover
+6. Calcular Salários
+7. Sair
+
+Digite o tipo (gerente/vendedor/estagiario): vendedor
+Nome: Ana
+Salário base: 2000
+Comissão: 500
+Vendedor cadastrado com sucesso!
+
+Salário total de Ana: 2500
+
+
+👉 O sistema precisa rodar no terminal (ruby main.rb).
+👉 Se organizem bem nos arquivos e usem herança da forma correta.
+
+
+  def search_name(info)
+    search = @funcionarios.select do | employee |
+      employee.name.include?(info)
+    end
+    if search.empty?
+      puts "Informação não encontrada.."
+    else
+      puts "Resultados: "
+      employee.each { |employee| puts employee.name.include?(info)}
+    end
+    #
+    #
+    #
+  end
