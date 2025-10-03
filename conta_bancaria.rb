@@ -1,46 +1,46 @@
-# class ContaBancaria
-#   attr_reader :account, :name, :saldo
-#   def initialize(account, name, deposito)
-#     @account = account
-#     @name = name
-#     @saldo = deposito
-#   end
+class ContaBancaria
+  attr_reader :account, :name, :saldo
+  def initialize(account, name, deposito)
+    @account = account
+    @name = name
+    @saldo = deposito
+  end
 
-#   def mostrar_saldo
-#     puts "Saldo atual da conta #{@account} de #{@name}: R$#{@saldo}"
-#   end
+  def mostrar_saldo
+    puts "Saldo atual da conta #{@account} de #{@name}: R$#{@saldo}"
+  end
 
-#   def transferir(valor, conta_destino)
-#     if valor <= 0
-#       puts "Valor inválido para transferência."
-#       return
-#     end
-#     if valor > @saldo
-#       puts "Saldo insuficiente para transferência."
-#       return
-#     end
-#     @saldo -= valor
-#     conta_destino.receber_transferencia(valor)
-#     puts "Transferência de R$#{valor} realizada com sucesso para #{conta_destino.name}."
-#   end
+  def transferir(valor, conta_destino)
+    if valor <= 0
+      puts "Valor inválido para transferência."
+      return
+    end
+    if valor > @saldo
+      puts "Saldo insuficiente para transferência."
+      return
+    end
+    @saldo -= valor
+    conta_destino.receber_transferencia(valor)
+    puts "Transferência de R$#{valor} realizada com sucesso para #{conta_destino.name}."
+  end
 
-#   def receber_transferencia(valor) #linha 40
-#     @saldo += valor
-#   end
-# end
+  def receber_transferencia(valor) #linha 40
+    @saldo += valor
+  end
+end
 
-# cc1 = ContaBancaria.new("Banco", "Loucei", 1222.11)
-# cc2 = ContaBancaria.new("Bank", "Ceilou", 1000.00)
+cc1 = ContaBancaria.new("Banco", "Loucei", 1222.11)
+cc2 = ContaBancaria.new("Bank", "Ceilou", 1000.00)
 
-# cc1.mostrar_saldo
-# cc2.mostrar_saldo
+cc1.mostrar_saldo
+cc2.mostrar_saldo
 
-# #transferir o valor passado no parametro para a conta tabem passada no paramentro
-# #Não pode transferir um valor maior que o meu saldo
-# cc1.transferir(300, cc2)
+#transferir o valor passado no parametro para a conta tabem passada no paramentro
+#Não pode transferir um valor maior que o meu saldo
+cc1.transferir(300, cc2)
 
-# cc1.mostrar_saldo
-# cc2.mostrar_saldo
+cc1.mostrar_saldo
+cc2.mostrar_saldo
 
 
 

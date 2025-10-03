@@ -1,3 +1,33 @@
+#Array para armazenar os produtos
+carrinho = []
+
+loop do
+  puts "\nDigite o nome do produto (ou 'sair' para finalizar):"
+  nome = gets.chomp
+
+  break if nome.downcase == "sair"
+
+  puts "Digite o valor do produto:"
+  valor = gets.chomp.to_f
+
+  produto = { nome: nome, valor: valor }
+  carrinho << produto
+end
+
+# Exibindo os produtos cadastrados
+puts "\nProdutos cadastrados:"
+total = 0.0
+
+#Percorre os produtos e mostrar o indice de cada item na lista.
+carrinho.each_with_index do |produto, index| 
+  puts "#{index + 1}. #{produto[:nome]} - R$#{'%.2f' % produto[:valor]}" #Transforma o indice(0) numa contagem humana(1)
+  total += produto[:valor]
+end
+
+# Exibindo o total
+puts "\nValor total: R$#{'%.2f' % total}"
+
+
 # cadastro_pessoa = { #Criando hash com dados pré-definidos
 #   nome: "Acioli",
 #   idade: 25,
@@ -27,36 +57,3 @@
 # else
 #   puts "Contato não encontrado."
 # end
-
-
-#####################################
-
-
-#Array para armazenar os produtos
-carrinho = []
-
-loop do
-  puts "\nDigite o nome do produto (ou 'sair' para finalizar):"
-  nome = gets.chomp
-
-  break if nome.downcase == "sair"
-
-  puts "Digite o valor do produto:"
-  valor = gets.chomp.to_f
-
-  produto = { nome: nome, valor: valor }
-  carrinho << produto
-end
-
-# Exibindo os produtos cadastrados
-puts "\nProdutos cadastrados:"
-total = 0.0
-
-#Percorre os produtos e mostrar o indice de cada item na lista.
-carrinho.each_with_index do |produto, index| 
-  puts "#{index + 1}. #{produto[:nome]} - R$#{'%.2f' % produto[:valor]}" #Transforma o indice(0) numa contagem humana(1)
-  total += produto[:valor]
-end
-
-# Exibindo o total
-puts "\nValor total: R$#{'%.2f' % total}"

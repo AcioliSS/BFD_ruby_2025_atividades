@@ -3,7 +3,6 @@ number = gets.to_i # tamanho total da matriz.
 system("clear")
 
 # Cria uma matriz quadrada de tamanho number x number.
-
 matriz = Array.new(number) { Array.new(number, 0) } # Cada célula começa com o valor
 
 # Calcula quantas camadas a matriz terá.
@@ -20,6 +19,7 @@ camadas.times do | valor |#representa o índice da camada atual
     end
   end
 end
+
 # Imprime a matriz formatada
 puts "\nMatriz #{number} x #{number}: \n\n"
 matriz.each do | linha | #percorre cada linha da matriz
@@ -28,24 +28,6 @@ matriz.each do | linha | #percorre cada linha da matriz
   end
   puts
 end
+
 puts "\nPressione Enter para sair"
 gets
-
-
-# puts "Digite o tamanho da sua matriz quadratica"
-# tamanho = gets.to_i
-# system("clear")
-
-
-# tamanho.times do | a |# Aqui está printando as linhas
-  
-#   tamanho.times do | j |# Aqui está pritando as colunas
-#     print "0 "
-#   end
-
-#   puts
-# end
-
-# puts
-# puts "Digite enter pra sair"
-# gets

@@ -39,7 +39,7 @@ def printa_o_mapa(tamanho, posicao_dos_postes, posicao_do_personagem)
       end
     end
 
-    puts #imprime uma linha nova
+    puts #imprime uma lina nova
   end
 end
 
@@ -59,7 +59,7 @@ loop do
 
   # Cria uma cópia da posição atual do personagem
   nova_posicao = [posicao_do_personagem[0], posicao_do_personagem[1]]
-  
+
   # Atualiza a nova posição com base na tecla pressionada
   if input_do_user == 's'
     nova_posicao[0] += 1 unless nova_posicao[0] == tamanho - 1 # Move para baixo
@@ -82,6 +82,7 @@ loop do
     posicao_do_personagem = nova_posicao # Atualiza a posição do personagem
   end
 
+  system("clear")
 end
 
 puts
